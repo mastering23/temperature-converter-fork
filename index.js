@@ -7,6 +7,8 @@
  */
 function convertToCelsius(f) {
   // TODO
+  let celsiusTemp = (f - 32) * (5/9);
+  return Math.floor(celsiusTemp);
 }
 
 /**
@@ -24,6 +26,22 @@ function convertToCelsius(f) {
  */
 function describeTemperature(f) {
   // TODO
+  const celsiusValue = convertToCelsius(f);
+  let message = ``;
+  if (celsiusValue < 32) {
+    message = `Today Temperature is ${celsiusValue} a very cold day!`;
+  } else if (celsiusValue < 64) {
+    message = `Today Temperature is ${celsiusValue} a cold day!`;
+  } else if (celsiusValue < 86) {
+    message = `Today Temperature is ${celsiusValue} a warm day!`;
+  } else if (celsiusValue < 100) {
+    message = `Today Temperature is ${celsiusValue} a hot day!`;
+  } else if (celsiusValue >= 100) {
+    message = `Today Temperature is ${celsiusValue} a very hot day!`;
+  } else {
+    alert("Check inputs something went wrong!");
+  }
+  return message;
 }
 
 /**
@@ -32,6 +50,11 @@ function describeTemperature(f) {
  */
 function getRandomInt(limit) {
   // TODO
+  
+  const randomFahrenheitValue = Math.random() * 300;
+
+  return   Math.floor(randomFahrenheitValue);
+
 }
 
 // -------------------- DO NOT CHANGE THE CODE BELOW ---------------------- //
